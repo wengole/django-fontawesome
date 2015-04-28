@@ -8,8 +8,8 @@ from .utils import get_icon_choices
 
 CHOICES = get_icon_choices()
 
-class IconWidget(forms.Select):
 
+class IconWidget(forms.Select):
     def __init__(self, attrs=None):
         super(IconWidget, self).__init__(attrs, choices=CHOICES)
 

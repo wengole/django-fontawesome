@@ -6,7 +6,6 @@ from .widgets import IconWidget
 
 
 class IconFormField(forms.Field):
-
     def __init__(self, *args, **kwargs):
         self.widget = IconWidget
 

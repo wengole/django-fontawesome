@@ -6,7 +6,6 @@ from .forms import IconFormField
 
 
 class IconField(models.Field):
-
     description = _('A fontawesome icon field')
     __metaclass__ = models.SubfieldBase
 
