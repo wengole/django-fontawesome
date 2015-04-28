@@ -25,7 +25,8 @@ class IconWidget(forms.Select):
         else:
             selected_html = ''
 
-        return format_html('<option data-icon="{0}" value="{0}"{1}>{2}</option>',
+        return format_html(
+            '<option data-icon="{0}" value="{0}"{1}>{2}</option>',
             option_value,
             selected_html,
             force_text(option_label),
@@ -40,7 +41,8 @@ class IconWidget(forms.Select):
 
         css = {
             'all': (
-                getattr(settings, 'FONTAWESOME_CSS_URL', 'fontawesome/css/font-awesome.min.css'),
+                getattr(settings, 'FONTAWESOME_CSS_URL',
+                        'fontawesome/css/font-awesome.min.css'),
                 'fontawesome/select2/select2.css',
                 'fontawesome/select2/select2-bootstrap.css'
             )
