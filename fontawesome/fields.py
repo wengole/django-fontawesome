@@ -1,8 +1,9 @@
 from django.db import models
 from django.utils.translation import ugettext as _
 
-from . import Icon
-from forms import IconFormField
+from .icon import Icon
+from .forms import IconFormField
+
 
 class IconField(models.Field):
 
