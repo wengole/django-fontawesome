@@ -27,6 +27,9 @@ class IconField(models.Field):
         # default => string
         return Icon(icon_id=value)
 
+    def from_db_value(self, value, expression, connection, context):
+        return self.to_python(value)
+
     def get_prep_value(self, value):
         return str(value)
 
