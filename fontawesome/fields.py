@@ -32,8 +32,8 @@ class IconField(models.Field):
 
     def formfield(self, **kwargs):
         defaults = {
-            'form_class':IconFormField,
-            #'choices_form_class':IconFormField
+            'form_class': IconFormField,
+            # 'choices_form_class':IconFormField
         }
 
         defaults.update(kwargs)

@@ -2,10 +2,10 @@ import os
 import yaml
 
 PATH = os.path.join(os.path.dirname(__file__), 'icons.yml')
+CHOICES = [('', '----------')]
+
 
 def get_icon_choices():
-
-    CHOICES = [('', '----------')]
 
     with open(PATH) as f:
         icons = yaml.load(f)

@@ -5,11 +5,12 @@ from django.utils.html import format_html
 
 register = template.Library()
 
+
 @register.simple_tag
 def fontawesome_icon(icon, large=False, fixed=False, spin=False, li=False,
-    rotate=False, border=False, color=False):
-
-    return '<i class="{prefix} {prefix}-{icon}{large}{fixed}{spin}{li}{rotate}{border}"{color}></i>'.format(
+                     rotate=False, border=False, color=False):
+    return ('<i class="{prefix} {prefix}-{icon}{large}{fixed}{spin}{li}'
+            '{rotate}{border}"{color}></i>').format(
         prefix=getattr(settings, 'FONTAWESOME_PREFIX', 'fa'),
         icon=icon,
         large=' fa-lg' if large is True else '',
@@ -21,8 +22,10 @@ def fontawesome_icon(icon, large=False, fixed=False, spin=False, li=False,
         color='style="color:%s;"' % color if color else ''
     )
 
+
 @register.simple_tag
 def fontawesome_stylesheet():
-    href = getattr(settings, 'FONTAWESOME_CSS_URL', static('fontawesome/css/font-awesome.min.css'))
+    href = getattr(settings, 'FONTAWESOME_CSS_URL',
+                   static('fontawesome/css/font-awesome.min.css'))
     link = format_html('<link href="{0}" rel="stylesheet" media="all">', href)
     return link
