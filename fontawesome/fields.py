@@ -18,14 +18,14 @@ class IconField(models.Field):
         return 'CharField'
 
     def to_python(self, value):
-        if not value or value == 'None':
+        if value is None or value == 'None':
             return None
 
         if isinstance(value, Icon):
             return value
 
         # default => string
-        return Icon(id=value)
+        return Icon(icon_id=value)
 
     def get_prep_value(self, value):
         return str(value)
